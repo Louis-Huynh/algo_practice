@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/binary_tree.h
+node.h
+../include/node.h
+
+../include/hello.h
+iostream
+-
+
+../include/node.h
+
+/home/louis/Documents/dev/testCmake/src/main.cpp
+iostream
+-
+hello.h
+/home/louis/Documents/dev/testCmake/src/hello.h
+binary_tree.h
+/home/louis/Documents/dev/testCmake/src/binary_tree.h
+node.h
+/home/louis/Documents/dev/testCmake/src/node.h
+
