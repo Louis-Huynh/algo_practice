@@ -9,8 +9,9 @@ int main()
     a.say_hello();
 
     binary_tree abe;
-    abe.insert(1);
-    abe.insert(2);
-    abe.insert(3);
-
+    for (int i = 0; i < 10; i++)
+    {
+        abe.insert(i);
+    }
+    abe.print();
 }

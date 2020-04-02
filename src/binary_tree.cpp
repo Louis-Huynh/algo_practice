@@ -7,6 +7,11 @@ binary_tree::binary_tree()
     root = NULL;
 }
 
+binary_tree::~binary_tree()
+{
+    delete_tree();
+}
+
 void binary_tree::insert(int value)
 {
     if (root != NULL)
@@ -32,6 +37,11 @@ node *binary_tree::search(int value)
     return search(value, root);
 }
 
+void binary_tree::print()
+{
+    print(root);
+}
+
 void binary_tree::insert(int value, node *leaf)
 {
     if (value > leaf->value)
@@ -43,7 +53,7 @@ void binary_tree::insert(int value, node *leaf)
             leaf->right = new node;
             leaf->right->left = NULL;
             leaf->right->right = NULL;
-            leaf->right->value = 0;
+            leaf->right->value = value;
         }
     }
     else if (value <= leaf->value)
@@ -55,7 +65,7 @@ void binary_tree::insert(int value, node *leaf)
             leaf->left = new node;
             leaf->left->left = NULL;
             leaf->left->right = NULL;
-            leaf->left->right = 0;
+            leaf->left->value = value;
         }
     }
 }
@@ -94,5 +104,15 @@ node *binary_tree::search(int value, node *leaf)
     else
     {
         return NULL;
+    }
+}
+
+void binary_tree::print(node *leaf)
+{
+    if (leaf != NULL)
+    {
+        print(leaf->left);
+        print(leaf->right);
+        cout << leaf->value;
     }
 }

@@ -15,6 +15,7 @@ enable_testing()
 # target_link_libraries(testCmake PRIVATE say-hello)
 set(SOURCES
     src/hello.cpp
+    src/binary_tree.cpp
     src/main.cpp
 )
 
