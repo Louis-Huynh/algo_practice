@@ -94,11 +94,11 @@ node *binary_tree::search(int value, node *leaf)
             return leaf;
         else if (value > leaf->value)
         {
-            search(value, leaf->right);
+            return search(value, leaf->right);
         }
         else if (value < leaf->value)
         {
-            search(value, leaf->left);
+            return search(value, leaf->left);
         }
     }
     else

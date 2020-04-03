@@ -9,9 +9,12 @@ int main()
     a.say_hello();
 
     binary_tree abe;
-    for (int i = 0; i < 10; i++)
-    {
-        abe.insert(i);
-    }
+    abe.insert(4);
+    abe.insert(2);
+    abe.insert(7);
+    abe.insert(1);
+    abe.insert(3);
+    std::cout << abe.search(7)->value << "\n";
+
     abe.print();
 }
