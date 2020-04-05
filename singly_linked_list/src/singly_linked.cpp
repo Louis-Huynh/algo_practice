@@ -1,39 +1,6 @@
-#include <stdio.h>
+#include "singly_linked.h"
 
-struct node
-{
-    int value;
-    node *next;
-};
-
-struct linky
-{
-
-    linky()
-    {
-        head = nullptr;
-        tail = nullptr;
-    }
-    void add(int value);
-
-    //insert
-    void insert_front(int value);
-    void insert_end(int value);
-    void insert_at_bigger(int value);
-    void insert_at_position(int pos, int value);
-
-    //delete
-    void delete_front();
-    void delete_back();
-    void delete_at_position(int pos, int value);
-
-    void print();
-
-private:
-    node *head, *tail;
-};
-
-void linky::add(int value)
+void singly_linked::add(int value)
 {
     node *temp = new node();
     temp->value = value;
@@ -51,7 +18,7 @@ void linky::add(int value)
     }
 }
 
-void linky::insert_front(int value)
+void singly_linked::insert_front(int value)
 {
     node *temp = new node();
     temp->value = value;
@@ -59,7 +26,7 @@ void linky::insert_front(int value)
     head = temp;
 }
 
-void linky::insert_end(int value)
+void singly_linked::insert_end(int value)
 {
     node *temp = new node();
     temp->value = value;
@@ -68,7 +35,7 @@ void linky::insert_end(int value)
     tail = temp;
 }
 
-void linky::insert_at_bigger(int value)
+void singly_linked::insert_at_bigger(int value)
 {
     bool stop = false;
     node *pt = new node();
@@ -87,7 +54,7 @@ void linky::insert_at_bigger(int value)
     }
 }
 
-void linky::insert_at_position(int pos, int value)
+void singly_linked::insert_at_position(int pos, int value)
 {
     node *pt = new node();
     pt = head;
@@ -101,7 +68,7 @@ void linky::insert_at_position(int pos, int value)
     pt->next = temp;
 }
 
-void linky::delete_front()
+void singly_linked::delete_front()
 {
     node *temp = new node();
     temp = head;
@@ -109,7 +76,7 @@ void linky::delete_front()
     delete temp;
 }
 
-void linky::delete_back()
+void singly_linked::delete_back()
 {
     node *pt = new node();
     node *pre_pt = new node();
@@ -125,7 +92,21 @@ void linky::delete_back()
     delete (pt);
 }
 
-void linky::print()
+void singly_linked::delete_at_position(int pos)
+{
+    node *curr = new node();
+    node *prev = new node();
+    curr = head;
+    for (int i = 0; i < pos - 1; i++)
+    {
+        prev = curr;
+        curr = curr->next;
+    }
+    prev->next = curr->next;
+    delete curr;
+}
+
+void singly_linked::print()
 {
     node *pt = head;
 

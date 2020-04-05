@@ -13,8 +13,8 @@ enable_testing()
 # add_executable(testCmake main.cpp)
 
 # target_link_libraries(testCmake PRIVATE say-hello)
+
 set(SOURCES
-    src/hello.cpp
     src/binary_tree.cpp
     src/main.cpp
 )
@@ -25,7 +25,6 @@ target_include_directories(testCmake
 PRIVATE ${PROJECT_SOURCE_DIR}/include
 
 )
-
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
